@@ -28,7 +28,7 @@ const flowerPetals = Array.from({ length: 14 }, (_, i) => ({
   ][i % 8],
 }));
 
-const COUNTDOWN_TARGET = new Date("2026-12-03T00:00:00");
+const COUNTDOWN_TARGET = new Date("2026-12-02T00:00:00");
 
 function FlowerBloom({ id, color }) {
   const gradientId = `flower-petal-gradient-${id}`;
@@ -295,7 +295,7 @@ export default function EnvelopeScene({ galleryImages }) {
                 </h3>
                 <ul className="wedding-copy mt-2 space-y-1 text-sm text-[#cdb7c7]">
                   <li>Time: 5:30 PM</li>
-                  <li>Venue: Ashok Party Palace</li>
+                  <li>Venue: Star Banquet, Imadole</li>
                 </ul>
               </article>
 
@@ -339,7 +339,7 @@ export default function EnvelopeScene({ galleryImages }) {
                   Until we say “I do”
                 </h3>
                 <p className="wedding-copy mt-2 text-sm text-[#cdb7c7]">
-                  Counting down to 3 December 2026
+                  Counting down to 2 December 2026
                 </p>
                 <WeddingCountdown />
               </article>
