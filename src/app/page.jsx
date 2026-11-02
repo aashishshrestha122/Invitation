@@ -25,6 +25,26 @@ const galleryImages = [
     alt: 'A portrait from the wedding',
     caption: 'With love',
   },
+  {
+    src: `${basePath}/photos/3958B8E3-C7CF-4DF0-9848-8941859A1B71_4_5005_c.jpeg`,
+    alt: 'Couple standing by a coastal road',
+    caption: 'A coastal escape',
+  },
+  {
+    src: `${basePath}/photos/5F155002-B183-4AC0-84B3-FD8F0F0057B2_4_5005_c.jpeg`,
+    alt: 'Couple standing by the water',
+    caption: 'Together by the water',
+  },
+  {
+    src: `${basePath}/photos/F020DA65-B992-4A0C-B0C0-2F5190851A31_1_105_c.jpeg`,
+    alt: 'Close-up portrait of the couple',
+    caption: 'A cozy moment',
+  },
+  {
+    src: `${basePath}/photos/6F376DA9-A9EE-4421-AC06-B4C57D099926_1_102_o.jpeg`,
+    alt: 'Couple smiling together by the ocean',
+    caption: 'Seaside smiles',
+  },
 ]
 
 export default function Home() {

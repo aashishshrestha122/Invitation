@@ -124,74 +124,34 @@ export default function EnvelopeScene({ galleryImages }) {
   const [isOpen, setIsOpen] = useState(false);
   const prefersReducedMotion = useReducedMotion();
 
-  const bgCards = [
-    {
-      className:
-        "col-span-2 row-span-1 translate-y-0 rotate-[-10deg] sm:col-span-1 sm:row-span-2",
-      float: [0, -16, 0],
-      drift: [0, 18, 0],
-      scale: [1, 1.05, 1],
-    },
-    {
-      className:
-        "col-span-1 row-span-1 translate-y-4 rotate-[8deg] sm:col-span-1 sm:row-span-1",
-      float: [0, 12, 0],
-      drift: [0, -14, 0],
-      scale: [1, 1.04, 1],
-    },
-    {
-      className:
-        "col-span-1 row-span-1 translate-y-2 rotate-[3deg] sm:col-span-1 sm:row-span-1",
-      float: [0, -10, 0],
-      drift: [0, 12, 0],
-      scale: [1, 1.035, 1],
-    },
-    {
-      className:
-        "col-span-1 row-span-1 translate-y-6 rotate-[-6deg] sm:col-span-1 sm:row-span-2",
-      float: [0, 14, 0],
-      drift: [0, -18, 0],
-      scale: [1, 1.05, 1],
-    },
-    {
-      className:
-        "col-span-1 row-span-1 translate-y-1 rotate-[6deg] sm:col-span-1 sm:row-span-1",
-      float: [0, -12, 0],
-      drift: [0, 14, 0],
-      scale: [1, 1.04, 1],
-    },
-    {
-      className:
-        "col-span-2 row-span-1 translate-y-5 rotate-[-4deg] sm:col-span-1 sm:row-span-1",
-      float: [0, 10, 0],
-      drift: [0, -12, 0],
-      scale: [1, 1.04, 1],
-    },
-  ];
-
   return (
     <section
       className={`aurora-bg wedding-stage ${isOpen ? "wedding-open" : ""} relative h-full overflow-hidden px-2 py-3 sm:px-6 sm:py-8`}
     >
-      <div className="wedding-atmosphere pointer-events-none absolute inset-0 opacity-70">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(15,14,20,0.08),rgba(15,14,20,0.8))]" />
-        <div className="absolute inset-0 grid grid-cols-2 grid-rows-3 gap-2 p-3 sm:grid-cols-3 sm:grid-rows-2 sm:gap-5 sm:p-8">
-          {galleryImages.slice(0, 6).map((image, index) => (
+      <div className="wedding-atmosphere pointer-events-none absolute inset-0 opacity-90">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_48%,rgba(255,251,240,0.12),rgba(129,75,47,0.16))]" />
+        <div className="absolute inset-0 grid grid-cols-2 grid-rows-4 gap-2 p-3 sm:grid-cols-4 sm:grid-rows-2 sm:gap-5 sm:p-8">
+          {galleryImages.map((image, index) => (
             <motion.div
               key={image.src ?? image}
-              className={`wedding-memory relative overflow-hidden rounded-[28px] border border-white/10 bg-[#0f0e14] shadow-[0_24px_42px_rgba(0,0,0,0.45)] ${bgCards[index].className}`}
+              className="wedding-memory relative flex min-h-0 min-w-0 items-center justify-center overflow-hidden rounded-[22px] border border-white/80 bg-[#fff9ed]/85 p-1.5 shadow-[0_14px_32px_rgba(91,52,31,0.2)] sm:rounded-[28px] sm:p-2"
               animate={{
-                y: isOpen
-                  ? bgCards[index].float.map((value) => value * 1.7)
-                  : bgCards[index].float,
-                x: isOpen
-                  ? bgCards[index].drift.map((value) => value * 1.7)
-                  : bgCards[index].drift,
-                scale: isOpen ? 1 : bgCards[index].scale,
+                y: [
+                  0,
+                  (index % 2 === 0 ? -12 : 12) * (isOpen ? 1.7 : 1),
+                  0,
+                ],
+                x: [
+                  0,
+                  (index % 2 === 0 ? 14 : -14) * (isOpen ? 1.7 : 1),
+                  0,
+                ],
+                scale: [1, isOpen ? 1.02 : 1.04, 1],
                 rotate: isOpen ? 0 : [0, index % 2 === 0 ? 3 : -3, 0],
               }}
               transition={{
-                duration: isOpen ? 30 + index * 2 : 14 + index * 2,
+                duration: isOpen ? 30 + index * 1.5 : 14 + index * 1.5,
+                delay: index * -1.4,
                 repeat: Number.POSITIVE_INFINITY,
                 ease: "easeInOut",
               }}
@@ -199,11 +159,11 @@ export default function EnvelopeScene({ galleryImages }) {
               <img
                 src={image.src ?? image}
                 alt={image.alt ?? "Background memory"}
-                className="h-full w-full object-cover blur-[1.5px] saturate-[0.95]"
+                className="h-full w-full object-contain"
               />
-              <div className="absolute inset-0 bg-gradient-to-br from-[#1a1520]/18 via-transparent to-[#0f0e14]/50" />
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0f0e14]/88 to-transparent px-3 py-2">
-                <p className="text-[0.62rem] uppercase tracking-[0.18em] text-[#f0d7e7]">
+              <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-[#b56b4a]/10" />
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#fff9ed]/95 to-transparent px-2 pb-1.5 pt-4 sm:px-3 sm:pb-2">
+                <p className="text-[0.55rem] uppercase tracking-[0.12em] text-[#684536] sm:text-[0.62rem] sm:tracking-[0.18em]">
                   {image.caption ?? "Memory"}
                 </p>
               </div>
@@ -246,7 +206,12 @@ export default function EnvelopeScene({ galleryImages }) {
       </div>
 
       <div className="relative z-10 flex h-full flex-col items-center justify-center text-center">
-        <motion.div className="wedding-envelope-frame relative mx-auto mt-12 h-[84svh] max-h-[720px] min-h-[460px] w-[min(96vw,760px)] sm:mt-14 sm:h-[78vh] sm:min-h-[520px] sm:w-[min(94vw,760px)]">
+        <motion.div
+          className={`wedding-envelope-frame relative mx-auto mt-12 h-[84svh] max-h-[720px] min-h-[460px] w-[min(96vw,760px)] sm:mt-14 sm:h-[78vh] sm:min-h-[520px] sm:w-[min(94vw,760px)] ${isOpen ? "" : "cursor-pointer"}`}
+          onClick={() => {
+            if (!isOpen) setIsOpen(true);
+          }}
+        >
           <div className="pointer-events-none absolute -inset-2 rounded-[30px] border border-[#8f6330]/50" />
           <div className="pointer-events-none absolute -inset-4 rounded-[36px] border border-[#d3ad73]/28" />
           <div className="pointer-events-none absolute inset-[8%] rounded-[28px] border border-white/6 bg-black/10 blur-[2px]" />
@@ -405,7 +370,12 @@ export default function EnvelopeScene({ galleryImages }) {
             </div>
           )}
 
-          <div className="wedding-envelope relative h-full w-full overflow-hidden rounded-[30px] border border-[#5d3f2b] bg-gradient-to-br from-[#6b4a32] via-[#4f3528] to-[#3a2824] shadow-[0_24px_36px_rgba(8,7,12,0.5)]">
+          <div
+            className={`wedding-envelope relative h-full w-full overflow-hidden rounded-[30px] border border-[#5d3f2b] bg-gradient-to-br from-[#6b4a32] via-[#4f3528] to-[#3a2824] shadow-[0_24px_36px_rgba(8,7,12,0.5)] ${isOpen ? "" : "cursor-pointer"}`}
+            onClick={() => {
+              if (!isOpen) setIsOpen(true);
+            }}
+          >
             <motion.div
               className="wedding-flap absolute inset-x-0 top-0 z-[6] h-[40%] origin-top rounded-t-[30px] border-y border-[#6b4a32] bg-gradient-to-b from-[#886243] to-[#4b3328] shadow-[0_8px_18px_rgba(8,7,12,0.35)]"
               animate={{ rotateX: isOpen ? -176 : 0 }}
@@ -426,29 +396,29 @@ export default function EnvelopeScene({ galleryImages }) {
               style={{ clipPath: "polygon(0 55%, 100% 0, 100% 100%, 0 100%)" }}
             />
             <div className="pointer-events-none absolute bottom-[16%] left-1/2 z-[5] h-[24%] w-px -translate-x-1/2 bg-[#7a5639]/55" />
-            <button
-              type="button"
-              className="wedding-seal absolute left-1/2 top-1/2 z-[10] grid h-16 w-16 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border border-[#a97993] bg-gradient-to-br from-[#7f3551] to-[#3e1b2b] shadow-xl"
-              aria-label={
-                isOpen
-                  ? "Close the wedding invitation"
-                  : "Open the wedding invitation"
-              }
-              aria-controls="wedding-invitation-letter"
-              aria-expanded={isOpen}
-              onClick={() => setIsOpen((open) => !open)}
-            >
-              <motion.span
-                key={isOpen ? "close" : "monogram"}
-                className="font-display text-xl text-[#f4d2a0]"
-                initial={{ opacity: 0, scale: 0.82 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.24, ease: "easeOut" }}
-              >
-                {isOpen ? "×" : "AS"}
-              </motion.span>
-            </button>
           </div>
+          <button
+            type="button"
+            className="wedding-seal absolute left-1/2 top-1/2 z-[10] grid h-16 w-16 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border border-[#a97993] bg-gradient-to-br from-[#7f3551] to-[#3e1b2b] shadow-xl"
+            aria-label={
+              isOpen
+                ? "Close the wedding invitation"
+                : "Open the wedding invitation"
+            }
+            aria-controls="wedding-invitation-letter"
+            aria-expanded={isOpen}
+            onClick={() => setIsOpen((open) => !open)}
+          >
+            <motion.span
+              key={isOpen ? "close" : "monogram"}
+              className="font-display text-2xl font-semibold tracking-wide text-[#fff4d2]"
+              initial={{ opacity: 0, scale: 0.82 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.24, ease: "easeOut" }}
+            >
+              {isOpen ? "×" : "AS"}
+            </motion.span>
+          </button>
         </motion.div>
       </div>
     </section>

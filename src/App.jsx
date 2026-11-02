@@ -18,6 +18,22 @@ const photoSources = [
     src: "/photos/IMG_8673.JPG",
     alt: "Wedding photo 8673",
   },
+  {
+    src: "/photos/3958B8E3-C7CF-4DF0-9848-8941859A1B71_4_5005_c.jpeg",
+    alt: "Couple standing by a coastal road",
+  },
+  {
+    src: "/photos/5F155002-B183-4AC0-84B3-FD8F0F0057B2_4_5005_c.jpeg",
+    alt: "Couple standing by the water",
+  },
+  {
+    src: "/photos/F020DA65-B992-4A0C-B0C0-2F5190851A31_1_105_c.jpeg",
+    alt: "Close-up portrait of the couple",
+  },
+  {
+    src: "/photos/6F376DA9-A9EE-4421-AC06-B4C57D099926_1_102_o.jpeg",
+    alt: "Couple smiling together by the ocean",
+  },
 ];
 
 const backgroundPhotos = [
