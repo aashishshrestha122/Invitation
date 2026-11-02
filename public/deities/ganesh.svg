@@ -1,0 +1,20 @@
+<svg width="320" height="320" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Lord Ganesha illustration">
+  <defs>
+    <radialGradient id="g1" cx="50%" cy="45%" r="60%">
+      <stop offset="0%" stop-color="#fff7e8"/>
+      <stop offset="65%" stop-color="#f3cf9a"/>
+      <stop offset="100%" stop-color="#e6b46d"/>
+    </radialGradient>
+  </defs>
+  <circle cx="160" cy="160" r="148" fill="url(#g1)" opacity="0.9"/>
+  <circle cx="160" cy="160" r="132" fill="none" stroke="#8f2a34" stroke-width="4" opacity="0.25"/>
+  <path d="M110 122c10-26 34-42 50-42s40 16 50 42" fill="none" stroke="#8a1f2f" stroke-width="8" stroke-linecap="round"/>
+  <path d="M130 150c0-16 13-29 30-29s30 13 30 29" fill="none" stroke="#8a1f2f" stroke-width="8"/>
+  <path d="M160 156c-22 0-38 18-38 40 0 22 18 34 38 34 20 0 34-11 34-28 0-12-7-22-17-28" fill="none" stroke="#8a1f2f" stroke-width="9" stroke-linecap="round"/>
+  <path d="M177 197c14 6 21 18 21 29 0 18-15 32-38 32" fill="none" stroke="#8a1f2f" stroke-width="9" stroke-linecap="round"/>
+  <circle cx="145" cy="150" r="5" fill="#8a1f2f"/>
+  <circle cx="176" cy="150" r="5" fill="#8a1f2f"/>
+  <path d="M88 133c-16 8-22 23-19 38" fill="none" stroke="#8a1f2f" stroke-width="7" stroke-linecap="round"/>
+  <path d="M232 133c16 8 22 23 19 38" fill="none" stroke="#8a1f2f" stroke-width="7" stroke-linecap="round"/>
+  <ellipse cx="160" cy="70" rx="12" ry="18" fill="#8a1f2f"/>
+</svg>

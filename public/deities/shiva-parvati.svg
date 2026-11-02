@@ -1,0 +1,21 @@
+<svg width="320" height="320" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Shiva and Parvati illustration">
+  <defs>
+    <radialGradient id="s1" cx="50%" cy="45%" r="58%">
+      <stop offset="0%" stop-color="#fef7ee"/>
+      <stop offset="72%" stop-color="#e9c7b7"/>
+      <stop offset="100%" stop-color="#d8a292"/>
+    </radialGradient>
+  </defs>
+  <circle cx="160" cy="160" r="148" fill="url(#s1)" opacity="0.9"/>
+  <circle cx="160" cy="160" r="132" fill="none" stroke="#8f2a34" stroke-width="4" opacity="0.2"/>
+  <path d="M109 195c0-40 22-73 51-73 28 0 51 33 51 73" fill="none" stroke="#8a1f2f" stroke-width="8"/>
+  <circle cx="138" cy="118" r="28" fill="none" stroke="#8a1f2f" stroke-width="7"/>
+  <circle cx="186" cy="118" r="28" fill="none" stroke="#8a1f2f" stroke-width="7"/>
+  <path d="M151 112h22" stroke="#8a1f2f" stroke-width="5" stroke-linecap="round"/>
+  <path d="M130 119c6 3 10 8 12 13" stroke="#8a1f2f" stroke-width="4" stroke-linecap="round"/>
+  <path d="M198 119c-6 3-10 8-12 13" stroke="#8a1f2f" stroke-width="4" stroke-linecap="round"/>
+  <path d="M138 86c6-8 6-16 0-24" stroke="#8a1f2f" stroke-width="5" stroke-linecap="round"/>
+  <path d="M186 86c7-9 9-18 6-27" stroke="#8a1f2f" stroke-width="5" stroke-linecap="round"/>
+  <path d="M150 227c10 8 20 8 30 0" stroke="#8a1f2f" stroke-width="6" stroke-linecap="round"/>
+  <path d="M98 246h124" stroke="#8a1f2f" stroke-width="6" stroke-linecap="round" opacity="0.65"/>
+</svg>

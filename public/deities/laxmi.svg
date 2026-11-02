@@ -1,0 +1,20 @@
+<svg width="320" height="320" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Goddess Laxmi illustration">
+  <defs>
+    <radialGradient id="l1" cx="50%" cy="45%" r="60%">
+      <stop offset="0%" stop-color="#fff9ef"/>
+      <stop offset="70%" stop-color="#f6d9a9"/>
+      <stop offset="100%" stop-color="#ebb96f"/>
+    </radialGradient>
+  </defs>
+  <circle cx="160" cy="160" r="148" fill="url(#l1)" opacity="0.9"/>
+  <circle cx="160" cy="160" r="132" fill="none" stroke="#8f2a34" stroke-width="4" opacity="0.2"/>
+  <ellipse cx="160" cy="118" rx="30" ry="34" fill="none" stroke="#8a1f2f" stroke-width="7"/>
+  <path d="M123 198c0-34 17-56 37-56s37 22 37 56" fill="none" stroke="#8a1f2f" stroke-width="8"/>
+  <path d="M111 186c-12 11-14 26-7 38" fill="none" stroke="#8a1f2f" stroke-width="6" stroke-linecap="round"/>
+  <path d="M209 186c12 11 14 26 7 38" fill="none" stroke="#8a1f2f" stroke-width="6" stroke-linecap="round"/>
+  <path d="M160 84c-11 0-19-9-19-20 9 4 14 6 19 6s10-2 19-6c0 11-8 20-19 20z" fill="none" stroke="#8a1f2f" stroke-width="5"/>
+  <path d="M160 210l10 14h-20z" fill="#8a1f2f"/>
+  <path d="M90 236c25-22 50-28 70-28s45 6 70 28" fill="none" stroke="#8a1f2f" stroke-width="7"/>
+  <circle cx="133" cy="111" r="4" fill="#8a1f2f"/>
+  <circle cx="187" cy="111" r="4" fill="#8a1f2f"/>
+</svg>
