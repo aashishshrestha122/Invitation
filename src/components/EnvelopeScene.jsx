@@ -30,6 +30,18 @@ const flowerPetals = Array.from({ length: 14 }, (_, i) => ({
 }));
 
 const COUNTDOWN_TARGET = new Date("2026-12-02T00:00:00");
+const RSVP_EMAIL = "aashishshrestha12@gmail.com";
+
+function getRsvpMailto(isAttending) {
+  const response = isAttending
+    ? "We are happy to attend your wedding!"
+    : "We are sorry we cannot attend your wedding.";
+  const body = `${response}\n\nGuest name(s):\nNumber attending (if applicable):`;
+
+  return `mailto:${RSVP_EMAIL}?subject=${encodeURIComponent(
+    `Wedding RSVP: ${isAttending ? "Going" : "Unable to attend"}`,
+  )}&body=${encodeURIComponent(body)}`;
+}
 
 function FlowerBloom({ id, color }) {
   const gradientId = `flower-petal-gradient-${id}`;
@@ -259,14 +271,23 @@ export default function EnvelopeScene({ backgroundImage }) {
                   Will you celebrate with us?
                 </h3>
                 <p className="wedding-copy mt-2 text-sm">
-                  Let us know if you can join our special day.
+                  Choose an option to open a prefilled email. Please send it to
+                  confirm your reply.
                 </p>
-                <a
-                  className="wedding-action mt-4 inline-flex"
-                  href="mailto:aashishshrestha12@gmail.com?subject=Wedding%20RSVP"
-                >
-                  RSVP by email <span aria-hidden="true">♡</span>
-                </a>
+                <div className="mt-4 flex flex-wrap justify-center gap-3">
+                  <a
+                    className="wedding-action inline-flex"
+                    href={getRsvpMailto(true)}
+                  >
+                    Joyfully attending <span aria-hidden="true">♡</span>
+                  </a>
+                  <a
+                    className="wedding-action inline-flex"
+                    href={getRsvpMailto(false)}
+                  >
+                    Unable to attend
+                  </a>
+                </div>
               </article>
 
               <article className="glass-card wedding-card mt-3 rounded-2xl p-4 md:p-5">
