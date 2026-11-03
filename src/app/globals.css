@@ -124,19 +124,6 @@ h4 {
   filter: blur(42px);
 }
 
-.wedding-memory {
-  border-color: rgba(255, 253, 245, 0.94);
-  box-shadow: 0 18px 34px rgba(89, 49, 29, 0.2), 0 0 0 1px rgba(174, 127, 62, 0.18);
-}
-
-.wedding-memory img {
-  filter: saturate(1.02) brightness(1.02);
-}
-
-.wedding-memory > div:nth-child(2) {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(181, 107, 74, 0.08));
-}
-
 .auspicious-label {
   position: relative;
   overflow: hidden;
@@ -190,11 +177,17 @@ h4 {
   container-type: size;
   width: min(80vw, 156.75svh, 1200px);
   height: min(48.5vw, 95svh, 727px);
+  transform: scale(0.84);
+  transition: transform 540ms cubic-bezier(0.22, 1, 0.36, 1);
   flex: 0 0 auto;
   min-height: 0;
   max-height: 95svh;
   margin-top: 0;
   aspect-ratio: 1.65;
+}
+
+.aurora-bg.wedding-stage.wedding-open .wedding-envelope-frame {
+  transform: scale(1);
 }
 
 .wedding-envelope-frame > div:first-child {
@@ -381,6 +374,17 @@ h4 {
 
 .wedding-stage .wedding-envelope {
   border-radius: clamp(18px, 3vw, 34px);
+}
+
+@media (min-width: 901px) and (hover: hover) and (pointer: fine) {
+  .wedding-stage:not(.wedding-open) .wedding-envelope {
+    opacity: 0.48;
+    transition: opacity 320ms ease;
+  }
+
+  .wedding-stage:not(.wedding-open) .wedding-envelope-frame:hover .wedding-envelope {
+    opacity: 1;
+  }
 }
 
 .wedding-flap {

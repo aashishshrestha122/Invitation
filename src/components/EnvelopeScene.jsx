@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
+import MusicToggle from "./MusicToggle";
 
 const particles = Array.from({ length: 20 }, (_, i) => ({
   id: i,
@@ -120,7 +121,7 @@ function WeddingCountdown() {
   );
 }
 
-export default function EnvelopeScene({ galleryImages }) {
+export default function EnvelopeScene({ backgroundImage }) {
   const [isOpen, setIsOpen] = useState(false);
   const prefersReducedMotion = useReducedMotion();
 
@@ -128,48 +129,18 @@ export default function EnvelopeScene({ galleryImages }) {
     <section
       className={`aurora-bg wedding-stage ${isOpen ? "wedding-open" : ""} relative h-full overflow-hidden px-2 py-3 sm:px-6 sm:py-8`}
     >
-      <div className="wedding-atmosphere pointer-events-none absolute inset-0 opacity-90">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_48%,rgba(255,251,240,0.12),rgba(129,75,47,0.16))]" />
-        <div className="absolute inset-0 grid grid-cols-2 grid-rows-4 gap-2 p-3 sm:grid-cols-4 sm:grid-rows-2 sm:gap-5 sm:p-8">
-          {galleryImages.map((image, index) => (
-            <motion.div
-              key={image.src ?? image}
-              className="wedding-memory relative flex min-h-0 min-w-0 items-center justify-center overflow-hidden rounded-[22px] border border-white/80 bg-[#fff9ed]/85 p-1.5 shadow-[0_14px_32px_rgba(91,52,31,0.2)] sm:rounded-[28px] sm:p-2"
-              animate={{
-                y: [
-                  0,
-                  (index % 2 === 0 ? -12 : 12) * (isOpen ? 1.7 : 1),
-                  0,
-                ],
-                x: [
-                  0,
-                  (index % 2 === 0 ? 14 : -14) * (isOpen ? 1.7 : 1),
-                  0,
-                ],
-                scale: [1, isOpen ? 1.02 : 1.04, 1],
-                rotate: isOpen ? 0 : [0, index % 2 === 0 ? 3 : -3, 0],
-              }}
-              transition={{
-                duration: isOpen ? 30 + index * 1.5 : 14 + index * 1.5,
-                delay: index * -1.4,
-                repeat: Number.POSITIVE_INFINITY,
-                ease: "easeInOut",
-              }}
-            >
-              <img
-                src={image.src ?? image}
-                alt={image.alt ?? "Background memory"}
-                className="h-full w-full object-contain"
-              />
-              <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-[#b56b4a]/10" />
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#fff9ed]/95 to-transparent px-2 pb-1.5 pt-4 sm:px-3 sm:pb-2">
-                <p className="text-[0.55rem] uppercase tracking-[0.12em] text-[#684536] sm:text-[0.62rem] sm:tracking-[0.18em]">
-                  {image.caption ?? "Memory"}
-                </p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+      <MusicToggle />
+      <div
+        className="wedding-backdrop pointer-events-none absolute inset-0"
+        aria-hidden="true"
+      >
+        <img
+          src={backgroundImage}
+          alt=""
+          className="h-full w-full object-cover object-[center_55%] brightness-110 saturate-110"
+        />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(38,19,20,0.08)_0%,rgba(38,19,20,0.16)_52%,rgba(25,15,20,0.38)_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_18%,rgba(35,16,21,0.12)_100%)]" />
       </div>
 
       <div className="floating-glow left-[-10rem] top-[20%] h-80 w-80 bg-[#6f2f4c]" />
@@ -248,7 +219,7 @@ export default function EnvelopeScene({ galleryImages }) {
                 Join Us as We Tie the Knot!
               </h2>
               <p className="wedding-date mt-1 text-sm text-[#cbb4c5] md:text-base">
-                Saturday, 3 December 2026 · Lalitpur, Nepal
+                Wednesday, 2 December 2026 · Lalitpur, Nepal
               </p>
 
               <article className="glass-card wedding-card mt-4 rounded-2xl p-4 md:p-5">
