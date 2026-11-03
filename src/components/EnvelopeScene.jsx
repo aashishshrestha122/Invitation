@@ -141,7 +141,6 @@ export default function EnvelopeScene({ backgroundImage }) {
     <section
       className={`aurora-bg wedding-stage ${isOpen ? "wedding-open" : ""} relative h-full overflow-hidden px-2 py-3 sm:px-6 sm:py-8`}
     >
-      <MusicToggle />
       <div
         className="wedding-backdrop pointer-events-none absolute inset-0"
         aria-hidden="true"
@@ -412,6 +411,7 @@ export default function EnvelopeScene({ backgroundImage }) {
             </motion.span>
           </button>
         </motion.div>
+        <MusicToggle isOpen={isOpen} />
       </div>
     </section>
   );

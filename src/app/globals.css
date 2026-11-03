@@ -501,8 +501,8 @@ h4 {
 
 @media (max-width: 900px) {
   .aurora-bg.wedding-stage .wedding-envelope-frame {
-    position: fixed;
-    inset: 0;
+    position: relative;
+    inset: auto;
     margin: auto;
     transition:
       width 540ms cubic-bezier(0.22, 1, 0.36, 1),
@@ -538,6 +538,8 @@ h4 {
   }
 
   .wedding-stage.wedding-open .wedding-envelope-frame {
+    position: fixed;
+    inset: 0;
     z-index: 40;
     width: 100vw;
     height: 100dvh;
@@ -599,5 +601,15 @@ h4 {
       calc(-50% + 50vw - max(1rem, env(safe-area-inset-right)) - 24px),
       calc(-50% + max(1rem, env(safe-area-inset-top)) + 24px - 50dvh)
     );
+  }
+}
+
+@media (min-width: 901px) {
+  .wedding-music-player-open {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    margin-top: 1.5rem;
+    transform: none;
   }
 }
